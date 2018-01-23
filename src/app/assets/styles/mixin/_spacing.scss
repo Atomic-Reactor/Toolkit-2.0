@@ -1,0 +1,42 @@
+$sides: (top, bottom, left, right);
+$combo: (x, y);
+
+@each $space in $spacing {
+    @each $side in $combo {
+        .m-#{$space} {
+            margin: #{$space}px;
+        }
+        .m-#{$side}-#{$space} {
+            @if $side == x {
+                margin-left: #{$space}px;
+                margin-right: #{$space}px;
+            } @else if $side == y {
+                margin-top: #{$space}px;
+                margin-bottom: #{$space}px;
+            }
+        }
+
+        .p-#{$space} {
+            padding: #{$space}px;
+        }
+        .p-#{$side}-#{$space} {
+            @if $side == x {
+                padding-left: #{$space}px;
+                padding-right: #{$space}px;
+            } @else if $side == y {
+                padding-top: #{$space}px;
+                padding-bottom: #{$space}px;
+            }
+        }
+    }
+
+    @each $side in $sides {
+        .m-#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px;
+        }
+
+        .p-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}i: #{$space}px;
+        }
+    }
+}
