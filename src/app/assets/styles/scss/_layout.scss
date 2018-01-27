@@ -34,8 +34,17 @@ button {
 
 .flex {
     display: flex;
+
+    &-vertical {
+        flex-direction: row;
+    }
 }
 .flex-grow {
     flex-grow: 1;
 }
 
+.flex-stretch {
+    align-items: flex-start;
+    justify-content: stretch;
+
+}

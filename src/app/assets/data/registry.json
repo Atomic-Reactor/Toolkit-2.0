@@ -1,6 +1,6 @@
 {
-  "version": "2.0.6",
-  "timestamp": 1517022658842,
+  "version": "2.0.7",
+  "timestamp": 1517088463657,
   "dataMerge": true,
   "markupExt": "html",
   "src": {
@@ -22,60 +22,65 @@
     ]
   },
   "data": {
-    "buttons-default": {
-      "layout": "default",
-      "title": "Default",
-      "demo": false,
-      "dna": "button-default",
-      "code": true,
-      "readme": true,
-      "menu": 50
+    "settings": {
+      "menuGroups": {
+        "elements": {"title": "Elements"},
+        "catalyst": {"title": "Catalyst"},
+        "templates": {"title": "Page Templates"}
+      }
     },
+    "elements": {"menu": "All Elements"},
+    "buttons": {"menu": "Buttons"},
     "footer-global": {
       "layout": "default",
-      "title": "Global Footer",
+      "menu": false,
       "demo": false,
       "dna": "footer-global",
       "code": true,
-      "readme": true,
-      "menu": 50
+      "readme": true
+    },
+    "buttons-default": {
+      "layout": "default",
+      "menu": "Default",
+      "demo": false,
+      "dna": "button-default",
+      "code": true,
+      "readme": true
     },
     "footer-mobile": {
       "layout": "default",
-      "title": "Mobile Footer",
+      "menu": "Mobile Footer",
       "demo": false,
       "dna": "footer-mobile",
       "code": true,
-      "readme": true,
-      "menu": 50
+      "readme": true
     },
     "form-elements-text-input": {
       "layout": "default",
-      "title": "Demo",
+      "menu": "Text-Input",
       "demo": true,
       "dna": "text-input",
       "code": true,
       "readme": true,
-      "menu": 50
+      "title": "Demo"
     },
     "header-global": {
       "layout": "default",
-      "title": "Global Header",
+      "menu": "Global Header",
       "demo": false,
       "dna": "header-global",
       "code": true,
-      "readme": true,
-      "menu": 50
+      "readme": true
     },
     "header-mobile": {
       "layout": "default",
-      "title": "Mobile Header",
+      "menu": "Mobile Header",
       "demo": false,
       "dna": "header-mobile",
       "code": true,
-      "readme": true,
-      "menu": 50
-    }
+      "readme": true
+    },
+    "typography": {"title": "Typography Test"}
   },
   "themes": {
     "default": {
@@ -101,7 +106,14 @@
       "type": "directory"
     }
   },
-  "templates": {},
+  "templates": {
+    "home": {
+      "data": {},
+      "path": "src/toolkit/templates/home.html",
+      "markup": [],
+      "size": 0
+    }
+  },
   "layouts": {
     "default": {
       "data": {},
@@ -1318,6 +1330,28 @@
         62,
         10
       ]
+    },
+    "typography": {
+      "src/toolkit/elements/typography/markup.html": [
+        116,
+        121,
+        112,
+        111,
+        103,
+        114,
+        97,
+        112,
+        104,
+        121,
+        32,
+        109,
+        97,
+        114,
+        107,
+        117,
+        112,
+        10
+      ]
     }
   },
   "styles": {
@@ -1880,8 +1914,16 @@
       {
         "path": "src/toolkit/data",
         "name": "data",
-        "children": [],
-        "size": 0,
+        "children": [
+          {
+            "path": "src/toolkit/data/settings.json",
+            "name": "settings.json",
+            "size": 185,
+            "extension": ".json",
+            "type": "file"
+          }
+        ],
+        "size": 185,
         "type": "directory"
       },
       {
@@ -1893,13 +1935,20 @@
             "name": "buttons",
             "children": [
               {
+                "path": "src/toolkit/elements/buttons/data.json",
+                "name": "data.json",
+                "size": 24,
+                "extension": ".json",
+                "type": "file"
+              },
+              {
                 "path": "src/toolkit/elements/buttons/default",
                 "name": "default",
                 "children": [
                   {
                     "path": "src/toolkit/elements/buttons/default/markup.html",
                     "name": "markup.html",
-                    "size": 224,
+                    "size": 207,
                     "extension": ".html",
                     "type": "file"
                   },
@@ -1911,7 +1960,7 @@
                     "type": "file"
                   }
                 ],
-                "size": 241,
+                "size": 224,
                 "type": "directory"
               },
               {
@@ -1922,8 +1971,15 @@
                 "type": "file"
               }
             ],
-            "size": 265,
+            "size": 272,
             "type": "directory"
+          },
+          {
+            "path": "src/toolkit/elements/data.json",
+            "name": "data.json",
+            "size": 29,
+            "extension": ".json",
+            "type": "file"
           },
           {
             "path": "src/toolkit/elements/footer",
@@ -1934,9 +1990,16 @@
                 "name": "global",
                 "children": [
                   {
+                    "path": "src/toolkit/elements/footer/global/data.json",
+                    "name": "data.json",
+                    "size": 20,
+                    "extension": ".json",
+                    "type": "file"
+                  },
+                  {
                     "path": "src/toolkit/elements/footer/global/markup.html",
                     "name": "markup.html",
-                    "size": 388,
+                    "size": 372,
                     "extension": ".html",
                     "type": "file"
                   },
@@ -1955,7 +2018,7 @@
                     "type": "file"
                   }
                 ],
-                "size": 438,
+                "size": 442,
                 "type": "directory"
               },
               {
@@ -1965,7 +2028,7 @@
                   {
                     "path": "src/toolkit/elements/footer/mobile/markup.html",
                     "name": "markup.html",
-                    "size": 388,
+                    "size": 371,
                     "extension": ".html",
                     "type": "file"
                   },
@@ -1984,7 +2047,7 @@
                     "type": "file"
                   }
                 ],
-                "size": 438,
+                "size": 421,
                 "type": "directory"
               },
               {
@@ -1995,7 +2058,7 @@
                 "type": "file"
               }
             ],
-            "size": 911,
+            "size": 898,
             "type": "directory"
           },
           {
@@ -2023,7 +2086,7 @@
                   {
                     "path": "src/toolkit/elements/form-elements/text-input/markup.html",
                     "name": "markup.html",
-                    "size": 238,
+                    "size": 222,
                     "extension": ".html",
                     "type": "file"
                   },
@@ -2042,11 +2105,11 @@
                     "type": "file"
                   }
                 ],
-                "size": 606,
+                "size": 590,
                 "type": "directory"
               }
             ],
-            "size": 655,
+            "size": 639,
             "type": "directory"
           },
           {
@@ -2060,7 +2123,7 @@
                   {
                     "path": "src/toolkit/elements/header/global/markup.html",
                     "name": "markup.html",
-                    "size": 236,
+                    "size": 220,
                     "extension": ".html",
                     "type": "file"
                   },
@@ -2079,7 +2142,7 @@
                     "type": "file"
                   }
                 ],
-                "size": 302,
+                "size": 286,
                 "type": "directory"
               },
               {
@@ -2089,7 +2152,7 @@
                   {
                     "path": "src/toolkit/elements/header/mobile/markup.html",
                     "name": "markup.html",
-                    "size": 236,
+                    "size": 219,
                     "extension": ".html",
                     "type": "file"
                   },
@@ -2108,7 +2171,7 @@
                     "type": "file"
                   }
                 ],
-                "size": 294,
+                "size": 277,
                 "type": "directory"
               },
               {
@@ -2119,13 +2182,20 @@
                 "type": "file"
               }
             ],
-            "size": 631,
+            "size": 598,
             "type": "directory"
           },
           {
             "path": "src/toolkit/elements/typography",
             "name": "typography",
             "children": [
+              {
+                "path": "src/toolkit/elements/typography/markup.html",
+                "name": "markup.html",
+                "size": 62,
+                "extension": ".html",
+                "type": "file"
+              },
               {
                 "path": "src/toolkit/elements/typography/style.scss",
                 "name": "style.scss",
@@ -2134,11 +2204,11 @@
                 "type": "file"
               }
             ],
-            "size": 43,
+            "size": 105,
             "type": "directory"
           }
         ],
-        "size": 2505,
+        "size": 2541,
         "type": "directory"
       },
       {
@@ -2159,12 +2229,20 @@
       {
         "path": "src/toolkit/templates",
         "name": "templates",
-        "children": [],
+        "children": [
+          {
+            "path": "src/toolkit/templates/home.html",
+            "name": "home.html",
+            "size": 0,
+            "extension": ".html",
+            "type": "file"
+          }
+        ],
         "size": 0,
         "type": "directory"
       }
     ],
-    "size": 3138,
+    "size": 3359,
     "type": "directory"
   }
 }

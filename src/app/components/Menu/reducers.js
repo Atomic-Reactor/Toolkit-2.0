@@ -7,10 +7,6 @@ export default (state = {}, action) => {
         case actionTypes.MENU_MOUNT:
             return Object.assign({}, state, {...action.data});
 
-        case actionTypes.MENU_LOADED:
-            console.log(action.data);
-            return Object.assign({}, state, {...action.data});
-
         case actionTypes.MENU_ANIMATING:
             return Object.assign({}, state, {animating: true});
 
@@ -19,6 +15,9 @@ export default (state = {}, action) => {
                 status: (state.status === 'opened') ? 'closed' : 'opened',
                 animating: false,
             });
+
+        case actionTypes.REGISTRY_LOADED:
+            return Object.assign({}, state, {ready: true});
 
         default:
             return state;

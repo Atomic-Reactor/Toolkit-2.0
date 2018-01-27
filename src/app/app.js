@@ -173,6 +173,41 @@ const sanitizeInitialState = state => Object.keys(state)
     [key]: state[key],
 }), {});
 
+// Build the store
+
+// Load middleware
+let middleWare = [thunk];
+
+// Load InitalState first from modules
+let importedStates = importDefined(allInitialStates);
+initialState       = {
+    ...initialState,
+    ...sanitizeInitialState(importedStates),
+};
+// Don't use Router state on reload
+
+// Get localized state and apply it
+if (localizeState === true) {
+    middleWare.push(lsSave());
+    initialState = {
+        ...initialState,
+        ...sanitizeInitialState(lsLoad()),
+    };
+} else {
+    lsClear();
+}
+
+const createStoreWithMiddleware = applyMiddleware(...middleWare)(createStore);
+
+// Combine all Top-level reducers into one
+let rootReducer = combineReducers(importDefined(allReducers));
+
+// Add DevTools redux enhancer in development
+let storeEnhancer = process.env.NODE_ENV === 'development' ? DevTools.instrument() : _ => _;
+
+// Create the store
+export const store = createStoreWithMiddleware(rootReducer, initialState, storeEnhancer);
+
 /**
  * -----------------------------------------------------------------------------
  * @function App()
@@ -182,40 +217,6 @@ const sanitizeInitialState = state => Object.keys(state)
  */
 export const App = () => {
     if (bindPoints.length > 0) {
-
-        // Load middleware
-        let middleWare = [thunk];
-
-        // Load InitalState first from modules
-        let importedStates = importDefined(allInitialStates);
-        initialState = {
-            ...initialState,
-            ...sanitizeInitialState(importedStates),
-        };
-        // Don't use Router state on reload
-
-        // Get localized state and apply it
-        if (localizeState === true) {
-            middleWare.push(lsSave());
-            initialState = {
-                ...initialState,
-                ...sanitizeInitialState(lsLoad()),
-            };
-        } else {
-            lsClear();
-        }
-
-        const createStoreWithMiddleware = applyMiddleware(...middleWare)(createStore);
-
-        // Combine all Top-level reducers into one
-        let rootReducer = combineReducers(importDefined(allReducers));
-
-        // Add DevTools redux enhancer in development
-        let storeEnhancer = process.env.NODE_ENV === 'development' ? DevTools.instrument() : _=>_;
-
-        // Create the store
-        const store = createStoreWithMiddleware(rootReducer, initialState, storeEnhancer);
-
         // Render the React Components
         bindPoints.forEach((item) => {
             ReactDOM.render(

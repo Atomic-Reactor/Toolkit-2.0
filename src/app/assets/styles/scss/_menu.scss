@@ -9,6 +9,28 @@ nav.menu {
     bottom: 0;
     background-color: $grey-1;
 
+    > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        > *:last-child {
+            flex: 1 1 auto;
+            width: calc(100% + 20px);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        ul.menu-group {
+            margin: 0;
+            padding: 0;
+            @extend .p-r-20;
+        }
+    }
+
+
     &-closed {
         left: -350px;
         display: none;

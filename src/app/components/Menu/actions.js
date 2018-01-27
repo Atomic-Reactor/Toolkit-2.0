@@ -2,48 +2,12 @@ import { actionTypes } from 'appdir/app';
 import { services } from 'appdir/app';
 import TweenMax, { Power2 } from 'gsap';
 
-const compileManifest = (data) => {
-    let newData = Object.assign({}, data);
-    let prep = [];
-    let arr = [];
-
-    if (data.registry.hasOwnProperty('children')) {
-        prep = data.registry.children.slice();
-
-        while (prep.length > 0) {
-            let item = prep[0];
-            let name = item.name.toLowerCase();
-
-            if (name === '.ds_store') {
-              prep.shift();
-              continue;
-            }
-
-            if (item.hasOwnProperty('children')) {
-              prep = prep.concat(item.children.slice());
-            }
-
-            delete item.children;
-            arr.push(item);
-            prep.shift();
-        }
-
-        newData.manifest = arr;
-    }
-
-    return newData;
-};
-
 export default {
 
     mount: (data) => (dispatch) => {
         dispatch({type: actionTypes.MENU_MOUNT, data: data});
-
-        services.Menu.fetch().then((data) => {
-           dispatch({type: actionTypes.MENU_LOADED, data:compileManifest(data)});
-        });
     },
-    
+
     toggle: (nav) => (dispatch, getState) => {
         let state = getState()['Menu'];
 
@@ -82,5 +46,17 @@ export default {
 
         TweenMax.to(nav, css.speed, anime);
 
+    },
+
+    subscribe: () => (dispatch, getState, store) => {
+        const unsub = store.subscribe(() => {
+           let ival = setInterval(() => {
+               let state = getState()['Menu'];
+               if (state.ready === true) {
+                   clearInterval(ival);
+                   unsub();
+               }
+           }, 250);
+        });
     }
 };

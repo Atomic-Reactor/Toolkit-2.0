@@ -10,6 +10,8 @@ import { actions } from 'appdir/app';
 import Header from 'appdir/components/Header';
 import Icon from 'appdir/components/Icon';
 import Style from 'appdir/utils/Style';
+import { store } from 'appdir/app';
+import MenuItems from './MenuItems';
 
 /**
  * -----------------------------------------------------------------------------
@@ -22,6 +24,7 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => ({
     mount: () => dispatch(actions.Menu.mount()),
+    subscribe: () => dispatch(actions.Menu.subscribe()),
     toggle: (nav, button) => dispatch(actions.Menu.toggle(nav, button)),
 });
 
@@ -33,6 +36,7 @@ class Menu extends Component {
 
     componentDidMount() {
         this.props.mount();
+        this.props.subscribe();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -53,8 +57,9 @@ class Menu extends Component {
         return (
             <Fragment>
                 <nav className={`menu ${cls}`} ref={(elm) => { this.nav = elm; }}>
-                    <div className="flex">
+                    <div>
                         <Header />
+                        <MenuItems {...store.getState()['Registry']} />
                     </div>
                 </nav>
                 <button className='menu-toggle' onClick={this.onToggle.bind(this)} ref={(elm) => { this.button = elm; }}>

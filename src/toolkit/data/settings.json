@@ -1,0 +1,13 @@
+{
+  "menuGroups": {
+    "elements": {
+      "title": "Elements"
+    },
+    "catalyst": {
+      "title": "Catalyst"
+    },
+    "templates": {
+      "title": "Page Templates"
+    }
+  }
+}
