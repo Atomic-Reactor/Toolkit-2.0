@@ -1,6 +1,6 @@
 {
   "version": "2.0.7",
-  "timestamp": 1517088463657,
+  "timestamp": 1517093367283,
   "dataMerge": true,
   "markupExt": "html",
   "src": {
@@ -110,8 +110,37 @@
     "home": {
       "data": {},
       "path": "src/toolkit/templates/home.html",
-      "markup": [],
-      "size": 0
+      "markup": [
+        123,
+        10,
+        32,
+        32,
+        32,
+        32,
+        34,
+        109,
+        101,
+        110,
+        117,
+        34,
+        58,
+        32,
+        34,
+        72,
+        111,
+        109,
+        101,
+        32,
+        80,
+        97,
+        103,
+        101,
+        34,
+        10,
+        125,
+        10
+      ],
+      "size": 28
     }
   },
   "layouts": {
@@ -2233,16 +2262,16 @@
           {
             "path": "src/toolkit/templates/home.html",
             "name": "home.html",
-            "size": 0,
+            "size": 28,
             "extension": ".html",
             "type": "file"
           }
         ],
-        "size": 0,
+        "size": 28,
         "type": "directory"
       }
     ],
-    "size": 3359,
+    "size": 3387,
     "type": "directory"
   }
 }
