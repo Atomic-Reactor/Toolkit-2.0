@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install && gulp --environment production",
-    "launch": "npm install && gulp --environment development"
+    "install:launch": "npm install && gulp --environment development",
+    "launch": "gulp --environment development"
   },
   "keywords": [
     "react",
@@ -22,7 +23,7 @@
     "npm": ">=2.0.0"
   },
   "dependencies": {
-    "atomic-reactor-toolkit-assembler": "^2.0.5",
+    "atomic-reactor-toolkit-assembler": "^2.0.6",
     "axios": "^0.17.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -39,6 +40,7 @@
     "express": "^4.16.2",
     "fs-extra": "^5.0.0",
     "globby": "^7.1.1",
+    "gsap": "^1.20.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",

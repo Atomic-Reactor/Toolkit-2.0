@@ -48,6 +48,9 @@ module.exports = (toolkit = false) => {
             watcher: [
               "src/**/*",
             ],
+            nodemon: [
+                "dist/**/*",
+            ],
             js: [
                 "src/app/**/*.js",
             ],
@@ -71,6 +74,11 @@ module.exports = (toolkit = false) => {
             toolkit: {
                 js: [
                     "src/toolkit/assets/js/*.js",
+                ],
+                style: [
+                    "src/toolkit/assets/styles/**/style.less",
+                    "src/toolkit/assets/styles/**/style.scss",
+                    "src/toolkit/assets/styles/**/style.sass",
                 ],
                 assets: [
                     "src/toolkit/assets/**/*",

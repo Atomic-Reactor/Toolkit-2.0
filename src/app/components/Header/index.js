@@ -5,7 +5,8 @@
  * -----------------------------------------------------------------------------
  */
 import React, { Component } from 'react';
-
+import Logo from 'appdir/components/Logo';
+import Icon from 'appdir/components/Icon';
 
 /**
  * -----------------------------------------------------------------------------
@@ -19,12 +20,6 @@ class Header extends Component {
         this.state = Object.assign({}, this.props);
     }
 
-    componentDidMount() {
-        if (this.state.hasOwnProperty('onMount')) {
-            this.state.onMount(this);
-        }
-    }
-
     componentWillReceiveProps(nextProps) {
         this.setState((prevState) => {
             return Object.assign({}, prevState, nextProps);
@@ -34,10 +29,17 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <h1 className={"h-4"}>Atomic Reactor Toolkit</h1>
+                <div className='flex'>
+                    <Logo width={32} height={32} />
+                    <h1 className='h-6 m-x-20 flex-grow'>{this.state.title}</h1>
+                </div>
             </header>
         );
     }
 }
+
+Header.defaultProps = {
+    title: 'Atomic Reactor Toolkit',
+};
 
 export default Header;

@@ -1,6 +1,6 @@
 {
-  "version": "2.0.5",
-  "timestamp": 1516727789209,
+  "version": "2.0.6",
+  "timestamp": 1517022658842,
   "dataMerge": true,
   "markupExt": "html",
   "src": {
@@ -78,13 +78,6 @@
     }
   },
   "themes": {
-    "ds_store": {
-      "path": "src/toolkit/assets/styles/themes/.DS_Store",
-      "name": ".DS_Store",
-      "size": 6148,
-      "extension": "",
-      "type": "file"
-    },
     "default": {
       "path": "src/toolkit/assets/styles/themes/default",
       "name": "default",
@@ -1795,23 +1788,9 @@
     "name": "toolkit",
     "children": [
       {
-        "path": "src/toolkit/.DS_Store",
-        "name": ".DS_Store",
-        "size": 6148,
-        "extension": "",
-        "type": "file"
-      },
-      {
         "path": "src/toolkit/assets",
         "name": "assets",
         "children": [
-          {
-            "path": "src/toolkit/assets/.DS_Store",
-            "name": ".DS_Store",
-            "size": 6148,
-            "extension": "",
-            "type": "file"
-          },
           {
             "path": "src/toolkit/assets/fonts",
             "name": "fonts",
@@ -1858,13 +1837,6 @@
                 "name": "themes",
                 "children": [
                   {
-                    "path": "src/toolkit/assets/styles/themes/.DS_Store",
-                    "name": ".DS_Store",
-                    "size": 6148,
-                    "extension": "",
-                    "type": "file"
-                  },
-                  {
                     "path": "src/toolkit/assets/styles/themes/default",
                     "name": "default",
                     "children": [
@@ -1887,15 +1859,15 @@
                     "type": "directory"
                   }
                 ],
-                "size": 6682,
+                "size": 534,
                 "type": "directory"
               }
             ],
-            "size": 6682,
+            "size": 534,
             "type": "directory"
           }
         ],
-        "size": 12882,
+        "size": 586,
         "type": "directory"
       },
       {
@@ -1916,13 +1888,6 @@
         "path": "src/toolkit/elements",
         "name": "elements",
         "children": [
-          {
-            "path": "src/toolkit/elements/.DS_Store",
-            "name": ".DS_Store",
-            "size": 6148,
-            "extension": "",
-            "type": "file"
-          },
           {
             "path": "src/toolkit/elements/buttons",
             "name": "buttons",
@@ -2173,7 +2138,7 @@
             "type": "directory"
           }
         ],
-        "size": 8653,
+        "size": 2505,
         "type": "directory"
       },
       {
@@ -2199,7 +2164,7 @@
         "type": "directory"
       }
     ],
-    "size": 27730,
+    "size": 3138,
     "type": "directory"
   }
 }

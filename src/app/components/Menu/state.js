@@ -3,5 +3,5 @@
 */
 
 export default {
-    key: "value",
+    status: "opened",
 };

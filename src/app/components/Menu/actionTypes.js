@@ -1,4 +1,7 @@
 
 export default {
     MENU_MOUNT: 'MENU_MOUNT',
+    MENU_TOGGLE: 'MENU_TOGGLE',
+    MENU_LOADED: 'MENU_LOADED',
+    MENU_ANIMATING: 'MENU_ANIMATING',
 };

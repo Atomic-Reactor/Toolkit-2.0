@@ -1,3 +1,15 @@
-$spacing: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$spacing: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 80, 100);
 $h-sizes: (36, 32, 28, 24, 20, 16);
 
+$font-dir: '../fonts';
+
+$z-index-top       : 100000;
+$z-index-middle    : 50000;
+$z-index-bottom    : 1;
+
+$xs: (max:  767px);
+$sm: (min:  768px);
+$md: (min:  992px);
+$lg: (min: 1200px);
+$sm-only: (min: map-get($sm, min), max: map-get($md, min) - 1);
+$md-only: (min: map-get($md, min), max: map-get($lg, min) - 1);

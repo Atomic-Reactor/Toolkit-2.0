@@ -1,0 +1,45 @@
+nav.menu {
+
+    content: '{"width": 320, "left": -350, "right": 0, "speed": 0.125}';
+
+    position: fixed;
+    width: 320px;
+    height: 100vh;
+    left: -350px;
+    bottom: 0;
+    background-color: $grey-1;
+
+    &-closed {
+        left: -350px;
+        display: none;
+    }
+
+    &-opened {
+        left: 0;
+        display: block;
+    }
+}
+
+
+button.menu-toggle {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: $z-index-top;
+
+    background-color: rgba(0, 0, 0, 0.125);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: 0 0 6px 1px $shadow;
+    outline: none;
+
+    svg.icon {
+        margin-bottom: 2px;
+    }
+
+    @include media-query(sm)
+}

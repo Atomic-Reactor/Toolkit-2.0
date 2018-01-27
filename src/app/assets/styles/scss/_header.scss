@@ -1,6 +1,28 @@
 header {
-    background-color: $grey-1;
+
+    background-color: $secondary;
+    top: 0;
+    left: 0;
+    height: 58px;
+    width: 100%;
+    z-index: $z-index-middle;
+    overflow: hidden;
     color: $lite;
-    @extend .p-x-20;
-    @extend .p-y-5;
+
+    > div {
+        @extend .p-x-20;
+
+        padding-top: 13px;
+        padding-bottom: 8px;
+
+        align-items: center;
+        justify-content: flex-start;
+        color: $lite;
+    }
+
+
+    button {
+        @extend .p-x-15;
+        @extend .p-y-10;
+    }
 }

@@ -6,11 +6,17 @@ const config     = require('./gulp.config.js')();
 const express    = require('express');
 const fs         = require('fs');
 const app        = express();
+const chalk      = require('chalk');
+const moment     = require('moment');
 
 
 let port    = config.port.proxy;
 port        = (process.env.hasOwnProperty('APP_PORT')) ? process.env.APP_PORT : port;
 
+const timestamp = () => {
+    let now = moment().format('HH:mm:ss');
+    return `[${chalk.blue(now)}]`;
+};
 
 // Use basic auth if .htpasswd file is present
 if (fs.existsSync(__dirname + '/.htpasswd')) {
@@ -33,5 +39,5 @@ app.get('*', (req, res) => {
 
 // start server on the specified port and binding host
 app.listen(port, '0.0.0.0', function() {
-    console.log(`[00:00:00] Server running on port ${port}...`);
+    console.log(timestamp(), `Server running on port ${port}...`);
 });

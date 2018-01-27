@@ -1,4 +1,17 @@
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    @include font-face(sans);
+}
+
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
 }
