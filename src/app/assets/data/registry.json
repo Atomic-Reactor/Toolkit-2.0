@@ -1,6 +1,6 @@
 {
   "version": "2.0.7",
-  "timestamp": 1517093367283,
+  "timestamp": 1517194334756,
   "dataMerge": true,
   "markupExt": "html",
   "src": {
@@ -29,7 +29,7 @@
         "templates": {"title": "Page Templates"}
       }
     },
-    "elements": {"menu": "All Elements"},
+    "elements": {"menu": "All Elements", "icon": "code"},
     "buttons": {"menu": "Buttons"},
     "footer-global": {
       "layout": "default",
@@ -39,13 +39,15 @@
       "code": true,
       "readme": true
     },
+    "form-elements": {"menu": "Form Elements"},
     "buttons-default": {
       "layout": "default",
       "menu": "Default",
       "demo": false,
       "dna": "button-default",
       "code": true,
-      "readme": true
+      "readme": true,
+      "atomic": "atom"
     },
     "footer-mobile": {
       "layout": "default",
@@ -80,7 +82,7 @@
       "code": true,
       "readme": true
     },
-    "typography": {"title": "Typography Test"}
+    "typography-global-styles": {"menu": "Base Styles"}
   },
   "themes": {
     "default": {
@@ -1360,8 +1362,8 @@
         10
       ]
     },
-    "typography": {
-      "src/toolkit/elements/typography/markup.html": [
+    "typography-global-styles": {
+      "src/toolkit/elements/typography/global-styles/markup.html": [
         116,
         121,
         112,
@@ -1977,7 +1979,7 @@
                   {
                     "path": "src/toolkit/elements/buttons/default/markup.html",
                     "name": "markup.html",
-                    "size": 207,
+                    "size": 229,
                     "extension": ".html",
                     "type": "file"
                   },
@@ -1989,7 +1991,7 @@
                     "type": "file"
                   }
                 ],
-                "size": 224,
+                "size": 246,
                 "type": "directory"
               },
               {
@@ -2000,13 +2002,13 @@
                 "type": "file"
               }
             ],
-            "size": 272,
+            "size": 294,
             "type": "directory"
           },
           {
             "path": "src/toolkit/elements/data.json",
             "name": "data.json",
-            "size": 29,
+            "size": 47,
             "extension": ".json",
             "type": "file"
           },
@@ -2095,6 +2097,13 @@
             "name": "form-elements",
             "children": [
               {
+                "path": "src/toolkit/elements/form-elements/data.json",
+                "name": "data.json",
+                "size": 30,
+                "extension": ".json",
+                "type": "file"
+              },
+              {
                 "path": "src/toolkit/elements/form-elements/style.scss",
                 "name": "style.scss",
                 "size": 49,
@@ -2138,7 +2147,7 @@
                 "type": "directory"
               }
             ],
-            "size": 639,
+            "size": 669,
             "type": "directory"
           },
           {
@@ -2219,11 +2228,19 @@
             "name": "typography",
             "children": [
               {
-                "path": "src/toolkit/elements/typography/markup.html",
-                "name": "markup.html",
-                "size": 62,
-                "extension": ".html",
-                "type": "file"
+                "path": "src/toolkit/elements/typography/global-styles",
+                "name": "global-styles",
+                "children": [
+                  {
+                    "path": "src/toolkit/elements/typography/global-styles/markup.html",
+                    "name": "markup.html",
+                    "size": 57,
+                    "extension": ".html",
+                    "type": "file"
+                  }
+                ],
+                "size": 57,
+                "type": "directory"
               },
               {
                 "path": "src/toolkit/elements/typography/style.scss",
@@ -2233,11 +2250,11 @@
                 "type": "file"
               }
             ],
-            "size": 105,
+            "size": 100,
             "type": "directory"
           }
         ],
-        "size": 2541,
+        "size": 2606,
         "type": "directory"
       },
       {
@@ -2260,6 +2277,13 @@
         "name": "templates",
         "children": [
           {
+            "path": "src/toolkit/templates/data.json",
+            "name": "data.json",
+            "size": 49,
+            "extension": ".json",
+            "type": "file"
+          },
+          {
             "path": "src/toolkit/templates/home.html",
             "name": "home.html",
             "size": 28,
@@ -2267,11 +2291,11 @@
             "type": "file"
           }
         ],
-        "size": 28,
+        "size": 77,
         "type": "directory"
       }
     ],
-    "size": 3387,
+    "size": 3501,
     "type": "directory"
   }
 }

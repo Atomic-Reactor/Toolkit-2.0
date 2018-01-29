@@ -4,7 +4,7 @@
  * Imports
  * -----------------------------------------------------------------------------
  */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Logo from 'appdir/components/Logo';
 import Icon from 'appdir/components/Icon';
 
@@ -28,12 +28,14 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
-                <div className='flex'>
-                    <Logo width={32} height={32} />
-                    <h1 className='h-6 m-x-20 flex-grow'>{this.state.title}</h1>
-                </div>
-            </header>
+            <Fragment>
+                <header>
+                    <div className='flex'>
+                        <Logo width={32} height={32} />
+                        <h1 className='h-6 m-x-20 flex-grow'>{this.state.title}</h1>
+                    </div>
+                </header>
+            </Fragment>
         );
     }
 }

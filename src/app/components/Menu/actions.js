@@ -58,5 +58,15 @@ export default {
                }
            }, 250);
         });
-    }
+    },
+
+    item_expand: (p) => (dispatch) => { dispatch({type: actionTypes.MENU_ITEM_EXPAND, item: p}); },
+
+    item_toggle: (p) => (dispatch) => { dispatch({type: actionTypes.MENU_ITEM_TOGGLE, item: p}); },
+
+    item_collapse: (p) => (dispatch) => { dispatch({type: actionTypes.MENU_ITEM_COLLAPSE, item: p}); },
+
+    search: (text) => (dispatch) => { dispatch({type: actionTypes.MENU_SEARCH, text: text}); },
+
+    filter: (filter) => (dispatch) => { dispatch({type: actionTypes.MENU_FILTER, filter: filter}); },
 };

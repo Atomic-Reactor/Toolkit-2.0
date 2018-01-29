@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'appdir/app';
+import Menu from 'appdir/components/Menu';
 
 
 /**
@@ -41,7 +42,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                DASHBOARD COMPONENT
+                <Menu />
             </div>
         );
     }

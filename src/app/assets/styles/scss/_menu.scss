@@ -1,13 +1,13 @@
 nav.menu {
-
     content: '{"width": 320, "left": -350, "right": 0, "speed": 0.125}';
 
     position: fixed;
-    width: 320px;
+    width: $menu-width;
     height: 100vh;
-    left: -350px;
+    left: -#{$menu-width + 30px};
     bottom: 0;
     background-color: $grey-1;
+    box-shadow: 1px 0 10px 1px $shadow;
 
     > div {
         width: 100%;
@@ -15,21 +15,7 @@ nav.menu {
         display: flex;
         flex-direction: column;
         overflow: hidden;
-
-        > *:last-child {
-            flex: 1 1 auto;
-            width: calc(100% + 20px);
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-        ul.menu-group {
-            margin: 0;
-            padding: 0;
-            @extend .p-r-20;
-        }
     }
-
 
     &-closed {
         left: -350px;
@@ -39,6 +25,175 @@ nav.menu {
     &-opened {
         left: 0;
         display: block;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        width: calc(100% - 20px);
+    }
+
+    li {
+        color: $grey-4;
+
+        a,
+        .link {
+            @include font-face(sans);
+            display: block;
+            width: 100%;
+            color: inherit;
+            text-decoration: none;
+            font-size: 13px;
+
+            &a:hover {
+                color: $lite;
+            }
+        }
+
+        .link {
+            cursor: default;
+        }
+    }
+
+    .menu-groups {
+        flex: 1 1 auto;
+        width: calc(100% + 20px);
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .menu-group:first-child {
+            .menu-group-heading {
+                border-bottom: none;
+            }
+        }
+        .menu-group:last-child {
+            border-bottom: 1px solid $border-color;
+            .menu-group-heading {
+                background-color: $border-color;
+            }
+            margin-bottom: 100px;
+        }
+    }
+
+    .menu-group {
+        &[aria-expanded=false] {
+            .menu-heading {
+                display: none;
+            }
+        }
+    }
+
+    .menu-heading,
+    .menu-group-heading {
+        @include font-face(raleway);
+        text-transform: uppercase;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-left: 3px solid $border-color;
+        background-color: $border-color;
+        display: flex;
+        align-items: center;
+
+        button {
+            @extend .p-x-15;
+            @extend .p-y-5;
+
+            color: $black;
+
+            svg path {
+                fill: $black;
+                stroke: $black;
+            }
+
+            &:hover {
+                color: $primary;
+
+                svg path {
+                    fill: $primary;
+                    stroke: $primary;
+                }
+            }
+        }
+
+        a,
+        .link {
+            color: inherit;
+            @extend .p-y-15;
+            @extend .p-l-20;
+        }
+    }
+
+    .menu-heading {
+        @extend .p-l-5;
+
+        &[aria-expanded=false] {
+            button svg path {
+                fill: $primary;
+                stroke: $primary;
+            }
+        }
+    }
+
+    .menu-group-heading {
+        color: $lite;
+        border-left: 3px solid $highlight;
+
+        &[aria-expanded=false] {
+            button svg path {
+                fill: $primary;
+                stroke: $primary;
+            }
+        }
+    }
+
+    .menu-item {
+        @include font-face(sans);
+        letter-spacing: 0.5px;
+        font-size: 12px;
+        a,
+        .link {
+            @extend .p-y-10;
+            @extend .p-l-40;
+            &:hover {
+                color: $lite;
+            }
+        }
+
+        &[aria-expanded=false] {
+            display: none;
+            button svg path {
+                fill: $primary;
+                stroke: $primary;
+            }
+        }
+    }
+
+    .menu-search {
+        flex: 1 1 auto;
+        width: calc(100% + 20px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-bottom: 100px;
+
+        .menu-item,
+        .menu-item a,
+        .menu-item .link {
+            text-transform: uppercase;
+            font-size: 11px;
+
+            &:hover,
+            &.active {
+                color: $lite;
+                background-color: $border-color;
+            }
+        }
+
+        .menu-heading {
+            border-left: 3px solid $highlight;
+            color: $white;
+
+            a, .link { @extend .p-l-15; }
+        }
     }
 }
 
@@ -62,6 +217,4 @@ button.menu-toggle {
     svg.icon {
         margin-bottom: 2px;
     }
-
-    @include media-query(sm)
 }

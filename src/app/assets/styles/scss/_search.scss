@@ -1,0 +1,83 @@
+.search-box {
+    @extend .p-x-15;
+    @extend .p-y-15;
+    position: relative;
+    width: 100%;
+    display: block;
+    box-shadow: 0 1px 1px 1px $border-color;
+
+    input {
+        color: $lite;
+        padding: 7px 10px 7px 40px;
+        width: 100%;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        background-color: $input-bg;
+        outline: none;
+        font-size: 14px;
+
+        @include font-face(raleway);
+        letter-spacing: 1px;
+        font-weight: normal;
+
+        @include placeholder {
+            color: $grey-3;
+        }
+    }
+
+    svg {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+}
+
+.search-filters {
+    display: flex;
+
+    > * {
+        flex: 1 1 auto;
+    }
+
+    button {
+        @extend .p-t-10;
+        @extend .p-b-5;
+        display: flex;
+        height: 64px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: $lite;
+        font-size: 9px;
+        text-align: center;
+        text-transform: uppercase;
+
+        span {
+            @extend .m-t-5;
+        }
+
+        &, path, circle, ellipse { transition: all .5s; }
+
+        &:hover,
+        &.active {
+
+            background-color: $border-color;
+            circle,
+            ellipse {
+                fill: $highlight;
+            }
+
+            &.catalyst {
+                svg path:not(.no-fill) {
+                    fill: $highlight;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: $input-bg;
+        }
+    }
+}

@@ -55,6 +55,7 @@
     "jshint": "^2.9.4",
     "jshint-loader": "^0.8.4",
     "json-stringify-pretty-compact": "^1.1.0",
+    "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "nodemon": "^1.14.11",
     "react": "^16.2.0",
@@ -73,7 +74,6 @@
     "run-sequence": "^1.2.2",
     "slug": "^0.9.1",
     "uglifyjs-webpack-plugin": "^0.4.3",
-    "underscore": "*",
     "vinyl-source-stream": "^1.1.0",
     "webpack": "^3.9.1",
     "yargs": "^10.0.3"
