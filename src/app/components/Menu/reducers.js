@@ -5,6 +5,8 @@ export default (state = {}, action) => {
     let collapsed, filters;
 
     switch (action.type) {
+        case actionTypes.UPDATE_ROUTE:
+            return Object.assign({}, state, {...action.params});
 
         case actionTypes.MENU_MOUNT:
             return Object.assign({}, state, {...action.data});

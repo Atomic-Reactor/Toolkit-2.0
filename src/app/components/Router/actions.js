@@ -11,6 +11,7 @@ export default {
         dispatch({
             type: actionTypes.UPDATE_ROUTE,
             location,
+            params,
         });
 
         // load route data

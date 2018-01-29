@@ -27,7 +27,6 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => ({
     mount: () => dispatch(actions.Menu.mount()),
-    subscribe: () => dispatch(actions.Menu.subscribe()),
     toggle: (nav, button) => dispatch(actions.Menu.toggle(nav, button)),
     item_collapse: (p) => dispatch(actions.Menu.item_collapse(p)),
     item_expand: (p) => dispatch(actions.Menu.item_expand(p)),
@@ -44,7 +43,6 @@ class Menu extends Component {
 
     componentDidMount() {
         this.state.mount();
-        this.state.subscribe();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -70,9 +68,9 @@ class Menu extends Component {
     }
 
     render() {
+        let iclr    = (this.state.status === 'opened') ? Style.color.lite : Style.color.secondary;
         let cls     = (this.state.status === 'opened') ? 'menu-opened' : 'menu-closed';
         let ico     = (this.state.status === 'opened') ? 'cross' : 'menu';
-        let iclr    = (this.state.status === 'opened') ? Style.color.lite : Style.color.secondary;
         let sto     = store.getState()['Registry'];
 
         return (
@@ -86,6 +84,7 @@ class Menu extends Component {
                             {...sto}
                             onCollapseToggle={this.onCollapseToggle.bind(this)}
                             collapsed={this.state.collapsed || []}
+                            onClick={this.onToggle.bind(this)}
                             search={this.state.filterText}
                             filters={this.state.filters}
                         />

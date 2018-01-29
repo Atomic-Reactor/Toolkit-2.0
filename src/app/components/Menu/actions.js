@@ -48,18 +48,6 @@ export default {
 
     },
 
-    subscribe: () => (dispatch, getState, store) => {
-        const unsub = store.subscribe(() => {
-           let ival = setInterval(() => {
-               let state = getState()['Menu'];
-               if (state.ready === true) {
-                   clearInterval(ival);
-                   unsub();
-               }
-           }, 250);
-        });
-    },
-
     item_expand: (p) => (dispatch) => { dispatch({type: actionTypes.MENU_ITEM_EXPAND, item: p}); },
 
     item_toggle: (p) => (dispatch) => { dispatch({type: actionTypes.MENU_ITEM_TOGGLE, item: p}); },

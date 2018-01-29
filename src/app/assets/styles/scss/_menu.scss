@@ -157,6 +157,10 @@ nav.menu {
             &:hover {
                 color: $lite;
             }
+
+            &.active {
+                color: $white;
+            }
         }
 
         &[aria-expanded=false] {
