@@ -1,0 +1,4 @@
+
+export default {
+    ELEMENTLISTPAGE_MOUNT: 'ELEMENTLISTPAGE_MOUNT',
+};
