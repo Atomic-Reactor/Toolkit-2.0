@@ -1,6 +1,8 @@
 ![](https://image.ibb.co/ee2WaG/atomic_reactor.png)
 # Reactium
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Atomic-Reactor/Toolkit-2.0.svg)](https://greenkeeper.io/)
+
 A framework for creating React + Redux apps.
 
 ## Domain Driven Design
